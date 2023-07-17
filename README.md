@@ -1,4 +1,4 @@
-# Pibo_Conversation_02
+# Pibo_Package_02
 ---
 
 * 기본 정보
