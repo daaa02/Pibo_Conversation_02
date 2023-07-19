@@ -12,7 +12,7 @@ import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -125,7 +125,7 @@ class Com():
             
         while True:    
             time.sleep(1)
-            audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800, background=True)
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800, background=True)
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 붙이면 다 붙였어 라고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -138,7 +138,7 @@ class Com():
                 pibo = cm.tts(bhv="do_suggestion_S", string=f"좋아. 이제 공을 손으로 굴려서 동그라미 안으로 과일 택배를 배달해 보자!")
                 cwc.writerow(['pibo', pibo])
                 text_to_speech(text="준비이~~~~ 시이작!")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800, background=True)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800, background=True)
                 pibo = cm.tts(bhv="do_question_S", string=f"다 옮겼으면 다 옮겼어 라고 말해줘~")                
                 break
             else:

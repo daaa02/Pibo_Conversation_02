@@ -8,7 +8,7 @@ from threading import Thread
 from konlpy.tag import Komoran
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/data')
-sys.path.append('/home/pi/Pibo_Conversation')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation')
 import google
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import text_to_speech, TextToSpeech
@@ -164,7 +164,7 @@ class ConversationManage():
             audio.audio_play("/home/pi/trigger.wav", 'local', '-1800', False)
             # o.set_font(size=25)
             # o.draw_text((15,20), "듣는 중..."); o.show()
-            o.draw_image("/home/pi/Pibo_Conversation/data/behavior/icon/icon_recognition1.png"); o.show()
+            o.draw_image("/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/icon/icon_recognition1.png"); o.show()
             print("\n")
             
             t = Thread(target=eye.e_listen, args=(), daemon=True)

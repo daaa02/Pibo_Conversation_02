@@ -16,7 +16,7 @@ from openpibo.device import Device
 from openpibo.oled import Oled
 
 # my module
-sys.path.append('/home/pi/Pibo_Play/data')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/data')
 
 import behavior.eye_list as eye
 import behavior.display_list as oled
@@ -49,7 +49,7 @@ def do_question_L():
     t = Thread(target=oled.o_question, args=(), daemon=True)
     t.start()
     while True: 
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_question1.wav", out='local', volume=-1500, background=True)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_question1.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_question_L", cycle=1)
         break
     
@@ -59,7 +59,7 @@ def do_question_S():
     t = Thread(target=oled.o_question, args=(), daemon=True)
     t.start()
     while True:
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_question1.wav", out='local', volume=-1500, background=True)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_question1.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_question_S", cycle=1)
         break
     
@@ -107,7 +107,7 @@ def do_photo():
     while True:
         motion.set_motion(name="m_photo-1", cycle=1)
         break
-    audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_camera.mp3", out='local', volume=-1500, background=True)
+    audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_camera.mp3", out='local', volume=-1500, background=True)
     while True:
         motion.set_motion(name="m_photo-2", cycle=1)
         break
@@ -120,7 +120,7 @@ def do_stamp():
     while True:
         motion.set_motion(name="m_stamp-1", cycle=1)        
         break
-    audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_stamp2.wav", out='local', volume=-1500, background=True)
+    audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_stamp2.wav", out='local', volume=-1500, background=True)
     while True:
         motion.set_motion(name="m_stamp-2", cycle=1)        
         break
@@ -158,7 +158,7 @@ def do_wakeup():
     t = Thread(target=oled.o_wakeup, args=(), daemon=True)
     t.start()
     while True:
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_cheerful2.wav", out='local', volume=-1500, background=True)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerful2.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_wakeup", cycle=1)
         break
     
@@ -167,7 +167,7 @@ def do_compliment_L():
     oled.o_compliment()
     eye.e_compliment()
     while True:
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_cheerful2.wav", out='local', volume=-1500, background=True)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerful2.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_compliment_L", cycle=1)
         break
     
@@ -176,7 +176,7 @@ def do_compliment_S():
     oled.o_compliment()
     eye.e_compliment()
     while True:
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_cheerful2.wav", out='local', volume=-1500, background=True)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerful2.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_compliment_S", cycle=1)
         break
 
@@ -186,7 +186,7 @@ def do_agree():
     t = Thread(target=oled.o_agree, args=(), daemon=True)
     t.start()
     while True:
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_correct3.wav", out='local', volume=-1500, background=False)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_correct3.wav", out='local', volume=-1500, background=False)
         motion.set_motion(name="m_agree", cycle=1)
         break
 
@@ -195,7 +195,7 @@ def do_joy_A():
     t = Thread(target=oled.o_joy, args=(), daemon=True)
     t.start()
     while True:
-        # audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_cheerfulness2.wav", out='local', volume=-1500, background=True)
+        # audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerfulness2.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_joy_A", cycle=1)
         break
 
@@ -205,7 +205,7 @@ def do_joy_B():
     t = Thread(target=oled.o_joy, args=(), daemon=True)
     t.start()
     while True:
-        # audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_cheerfulness2.wav", out='local', volume=-1500, background=True)
+        # audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerfulness2.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_joy_B", cycle=1)
         break
     
@@ -215,7 +215,7 @@ def do_sad():
     t = Thread(target=oled.o_sad, args=(), daemon=True)
     t.start()
     while True:
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_sad.wav", out='local', volume=-1500, background=True)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_sad.wav", out='local', volume=-1500, background=True)
         motion.set_motion(name="m_sad", cycle=1)
         break
 

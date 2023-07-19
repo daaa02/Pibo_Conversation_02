@@ -11,7 +11,7 @@ import time
 import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
-sys.path.append('/home/pi/Pibo_Conversation/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation/')
 from data.c_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -48,7 +48,7 @@ class Fairytale():
         
         # 0. 동화 읽어주기
         pibo = cm.tts(bhv="do_breath1", string=f"내가 재미있는 이야기를 들려 줄게. 동화 제목은 {wm.word(self.story_name, 0)}야.")
-        f = open('/home/pi/Pibo_Conversation/src/Fairytale/data/08_bear_story.txt', 'r')
+        f = open('/home/pi/Pibo_Package_02/Pibo_Conversation/src/Fairytale/data/08_bear_story.txt', 'r')
         lines = f.readlines()
         # print(lines)
         

@@ -12,7 +12,7 @@ import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -116,7 +116,7 @@ class Soc():
                 pibo = cm.tts(bhv="do_joy_B", string=f"이제 비를 내려보자~ 자리에 서서 신문지 비를 두 손에 쥐고 하늘로 뿌려봐! 시이작!")
                 time.sleep(1)
 
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_paperrain.wav", volume=-1800)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_paperrain.wav", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"비가 오니까 시원해 진 것 같아~ 이제 바닥에 떨어진 비를 다시 모아보자. 다 모았으면 다 모았다고 말해줘~")
                 cwc.writerow(['pibo', pibo])                
                 break
@@ -131,7 +131,7 @@ class Soc():
             if answer[0][0] == "done" or answer[0][0] == "yes" or answer[0][0] == "next":
                 pibo = cm.tts(bhv="do_compliment_S", string=f"이번에는 누워서 비를 맞아보자~ 자리에 누워서 신문지 비를 두 손에 쥐고 다시 하늘로 뿌려봐! 시이작!")            
                 
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_paperrain.wav", volume=-1800)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_paperrain.wav", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"신문지 비가 또 내린다~")
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"{wm.word(self.user_name, 0)}가 내린 신문지 비는 정말 포근했어. 젖지 않는 멋진 비야~")

@@ -12,7 +12,7 @@ import json
 from datetime import date
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
-sys.path.append('/home/pi/Pibo_Conversation/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation/')
 from data.c_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -47,7 +47,7 @@ class Daily():
     def Bday(self):   
         
         # 1.1 기념일 알림
-        audio.audio_play(filename="/home/pi/Pibo_Conversation/data/behavior/audio/sound_cheerfulness2.wav", out='local', volume=-1500, background=False)
+        audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerfulness2.wav", out='local', volume=-1500, background=False)
         pibo = cm.tts(bhv="do_joy_A", string=f"3일 뒤 {wm.word(self.user_name, type=0)} 생일이지?")
         answer = cm.responses_proc(re_bhv="do_joy_A", re_q=f"3일 뒤 {wm.word(self.user_name, type=0)} 생일이지?",
                                    pos_bhv="do_joy_A", pos=f"{wm.word(self.user_name, type=0)}가 벌써 {self.age_child}살이 되는 구나!",

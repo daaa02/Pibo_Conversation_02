@@ -11,7 +11,7 @@ import time
 import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
-sys.path.append('/home/pi/Pibo_Conversation/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation/')
 from data.c_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -63,7 +63,7 @@ class Roleplay():
                                    neu_bhv="do_explain_A", neu=f"{wm.word(animal[0], 2)} 이렇게 울어.",
                                    act_bhv="do_joy_A", act=f"{wm.word(animal[1], 1)} 나타났다!")
         
-        audio.audio_play("/home/pi/Pibo_Conversation/src/Roleplay/Sound/16_cat.wav")
+        audio.audio_play("/home/pi/Pibo_Package_02/Pibo_Conversation/src/Roleplay/Sound/16_cat.wav")
         
         cwc.writerow(['pibo', pibo])
         cwc.writerow(['user', answer[0][1], answer[1]])

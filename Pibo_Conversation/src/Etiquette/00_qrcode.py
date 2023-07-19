@@ -6,7 +6,7 @@ import os, sys
 import time
 import json
 
-sys.path.append('/home/pi/Pibo_Conversation/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation/')
 from data.c_conversation_manage import ConversationManage, WordManage, NLP
 
 from openpibo.vision import Camera
@@ -63,7 +63,7 @@ class Etiquette():
                 cm.tts(bhv="do_suggestion_L", string=f"카드를 인식하지 못했어. 예절 카드를 다시 보여줄래?")
                 continue
             
-        os.system(f'python3 /home/pi/Pibo_Conversation/src/Etiquette/{self.act}.py')
+        os.system(f'python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/Etiquette/{self.act}.py')
             
         
         

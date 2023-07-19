@@ -23,7 +23,7 @@ oled = Oled()
 class RunSchedule():
     
     def __init__(self):
-        self.path = '/home/pi'
+        self.path = '/home/pi/Pibo_Package_02'
         self.completion = int
         self.act = ''
 
@@ -122,7 +122,7 @@ class RunSchedule():
         folder = "/home/pi/UserData"
         today = datetime.now().strftime('%y%m%d_%H%M')
         # f = open(f'{folder}/{today}.txt','w')        
-        # out = subprocess.check_output([f'python3 /home/pi/Pibo_Conversation/src/greeting.py'], shell=True, stderr=subprocess.STDOUT, encoding="utf-8")  
+        # out = subprocess.check_output([f'python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/greeting.py'], shell=True, stderr=subprocess.STDOUT, encoding="utf-8")  
         
         try:
             # out = subprocess.run([f'python3 {self.path}/{self.act}'], shell=True)
@@ -135,7 +135,7 @@ class RunSchedule():
             else:
                 text_to_speech(text="파이보랑 또 놀자!")            
                 motion.set_motion("m_wakeup", 1)
-                subprocess.run(['python3 /home/pi/Pibo_Conversation/src/start_touch.py'], shell=True)
+                subprocess.run(['python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/start_touch.py'], shell=True)
             
             
             # # 완료한 활동 개수가 짝수면 종료, 홀수면 계속
@@ -143,12 +143,12 @@ class RunSchedule():
             #     text_to_speech(text="다음에 또 놀자!")
             #     # text_to_speech(text="오늘 활동이 끝났어! 내일 또 만나자 안녕~!")
             #     motion.set_motion("m_wakeup", 1)
-            #     subprocess.run(['python3 /home/pi/Pibo_Conversation/src/start_touch.py'], shell=True)
+            #     subprocess.run(['python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/start_touch.py'], shell=True)
                 
             # if self.completion % 2 != 0:
             #     text_to_speech(text="다음 활동을 하고 싶으면 또 머리를 쓰다듬어줘!")
             #     motion.set_motion("m_wakeup", 1)                
-            #     subprocess.run(['python3 /home/pi/Pibo_Conversation/src/start_touch.py'], shell=True)
+            #     subprocess.run(['python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/start_touch.py'], shell=True)
         
         except Exception as ex:
             with open('/home/pi/pibo_errmsg', 'w') as f:

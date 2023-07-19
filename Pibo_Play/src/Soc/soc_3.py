@@ -12,7 +12,7 @@ import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -118,7 +118,7 @@ class Soc():
                 pibo = cm.tts(bhv="do_joy_B", string=f"그래애! 시작하자")
                 time.sleep(1)
 
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"노래가 끝났어. 신문지 땅 밖으로 나와도 좋아~")
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"신문지를 반으로 접자. 몇 번 접었는지 이따 물어볼테니 잘 기억해 둬야해. 다 접었으면 다 했다고 말해줘!")
@@ -136,7 +136,7 @@ class Soc():
                 pibo = cm.tts(bhv="do_compliment_S", string=f"신문지 땅이 좁아졌구나! 다시 시작해보자!")
                 # pibo = cm.tts(bhv="do_suggestion_L", string=f"노래가 다시 시작되면 먼저 바닥에 신문지를 깔고 신문지 위에 올라가서 마음껏 춤춰보자!")            
                 
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"노래가 끝났어. 신문지 땅 밖으로 나와도 좋아~")
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"또 신문지를 반으로 접자~ 몇 번 접었는지 이따 물어볼테니 잘 기억해 둬야해. 다 접었으면 다 했다고 말해줘!")
@@ -154,7 +154,7 @@ class Soc():
                 pibo = cm.tts(bhv="do_compliment_S", string=f"신문지 땅이 좁아졌구나! 다시 시작해보자!")
                 # pibo = cm.tts(bhv="do_suggestion_L", string=f"노래가 다시 시작되면 먼저 바닥에 신문지를 깔고 신문지 위에 올라가서 마음껏 춤춰보자!")            
                 
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"노래가 끝났어. 신문지 땅 밖으로 나와도 좋아~")
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"또 신문지를 반으로 접자~ 몇 번 접었는지 이따 물어볼테니 잘 기억해 둬야해. 다 접었으면 다 했다고 말해줘!")
@@ -172,7 +172,7 @@ class Soc():
                 pibo = cm.tts(bhv="do_compliment_S", string=f"신문지 땅이 좁아졌구나! 다시 시작해보자!")
                 # pibo = cm.tts(bhv="do_suggestion_L", string=f"노래가 다시 시작되면 먼저 바닥에 신문지를 깔고 신문지 위에 올라가서 마음껏 춤춰보자!")            
                 
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_dancing.mp3", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"노래가 끝났어. 신문지 땅 밖으로 나와도 좋아~")
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"신문지를 몇번 접었는지 기억나? 숫자로 몇 번인지 말해줘~")

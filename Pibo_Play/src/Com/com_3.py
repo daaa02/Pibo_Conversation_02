@@ -12,7 +12,7 @@ import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -171,7 +171,7 @@ class Com():
 
             if answer[0][0] == "done" or answer[0][0] == "yes" or answer[0][0] == "next":
                 pibo = cm.tts(bhv="do_question_S", string=f"좋았어. 이제 거리 이름처럼 흉내 내 보자!")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-1500, background=False)  
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-1500, background=False)  
                 
                 pibo = cm.tts(bhv="do_compliment_L", string=f"정말 열심히 잘 표현하는 걸? 또 어떤 거리를 가볼까?")
                 cwc.writerow(['pibo', pibo])
@@ -192,7 +192,7 @@ class Com():
             
             if answer[0][0] == "done" or answer[0][0] == "yes" or answer[0][0] == "next":
                 pibo = cm.tts(bhv="do_question_S", string=f"좋았어. 이제 거리 이름처럼 흉내 내 보자!")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-1500, background=False)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-1500, background=False)
                 
                 pibo = cm.tts(bhv="do_compliment", string=f"거리 이름에 따라 정말 열심히 표현했어~우리만의 멋진 동네를 만든 것 같아!")
                 time.sleep(1)

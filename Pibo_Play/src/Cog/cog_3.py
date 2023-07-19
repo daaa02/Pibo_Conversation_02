@@ -9,7 +9,7 @@ import time
 import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -160,7 +160,7 @@ class Cog():
                 pibo = cm.tts(bhv="do_explain_A", string=f"좋았어. 이제 내가 하나, 둘, 셋을 세면 벌떡 일어나서 종이컵을 떨어뜨리는 거야.")
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_joy_A", string=f"자, 준비이~ 하나, 두울, 세엣!")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_cup.wav", volume=-1500)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_cup.wav", volume=-1500)
                 
                 time.sleep(1)
                 pibo = cm.tts(bhv="do_question_L", string=f"{wm.word(self.user_name, 0)}는 오늘 종이컵 놀이 하면서 어려운 게 있었어? ")

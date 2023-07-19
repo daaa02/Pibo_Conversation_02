@@ -17,7 +17,7 @@ pibo_audio = Audio()
 # pibo_audio.mute(True)
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
-sys.path.append('/home/pi/Pibo_Conversation/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation/')
 from data.c_conversation_manage import ConversationManage, WordManage
 from data.text_to_speech import TextToSpeech, text_to_speech
 import data.behavior.behavior_list as behavior
@@ -55,11 +55,11 @@ while True:
         #     oled.set_font(size=15)
         #     oled.draw_text((30,20), "한 번 더")
         #     oled.show()
-        #     # oled.draw_image("/home/pi/Pibo_Conversation/data/behavior/icon/icon_default2.png")
+        #     # oled.draw_image("/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/icon/icon_default2.png")
         #     # oled.show()
         
         # if count % 2 == 0:
-        #     # oled.draw_image("/home/pi/Pibo_Conversation/data/behavior/icon/icon_default1.png")
+        #     # oled.draw_image("/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/icon/icon_default1.png")
         #     # oled.show()
             
             # hello = ["소개"]
@@ -77,11 +77,11 @@ while True:
             
             # 키워드 단순화
             if "소개" in answer[0][1]:
-                os.system('python3 /home/pi/Pibo_Conversation/src/greeting.py')
+                os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/greeting.py')
                 # break
             
             if "헤어" in answer[0][1]:
-                os.system('python3 /home/pi/Pibo_Conversation/src/goodbye.py') 
+                os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/goodbye.py') 
                 # break
             
             else:     
@@ -96,19 +96,19 @@ while True:
             if answer[0][0] == 'positive' or answer[0][0] == 'action':
                 cm.tts(bhv="do_stop", string=f"잠시만 기다려줘. 재미있는 활동을 생각해볼께!")
                 break
-            # os.system('python3 /home/pi/Pibo_Conversation/src/schedule_run.py')
+            # os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/schedule_run.py')
                 
             else:
                 oled.clear()
                 continue
             
             
-os.system('python3 /home/pi/Pibo_Conversation/src/schedule_run.py')
+os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/schedule_run.py')
             # for i in range(len(hello)):
             #     if hello[i] in answer[0][1]:
             #         state = "첫만남"
             #         # print("첫만남 시나리오")
-            #         os.system('python3 /home/pi/Pibo_Conversation/src/greeting.py')
+            #         os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/greeting.py')
             #         state =''                  
             #         break
             
@@ -116,7 +116,7 @@ os.system('python3 /home/pi/Pibo_Conversation/src/schedule_run.py')
             #     if bye[i] in answer[0][1]:
             #         state = "작별"
             #         # print("작별 시나리오")
-            #         os.system('python3 /home/pi/Pibo_Conversation/src/goodbye.py') 
+            #         os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/goodbye.py') 
             #         break
                 
             # print(state)
@@ -132,7 +132,7 @@ os.system('python3 /home/pi/Pibo_Conversation/src/schedule_run.py')
             #         print("활동 시작")
                     
             #         cm.tts(bhv="do_stop", string=f"잠시만 기다려줘. 재미있는 활동을 생각해볼게!")
-            #         os.system('python3 /home/pi/Pibo_Conversation/src/schedule_run.py')
+            #         os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/schedule_run.py')
             
             #     else:
             #         oled.clear()

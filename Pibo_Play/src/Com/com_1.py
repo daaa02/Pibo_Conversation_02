@@ -12,7 +12,7 @@ import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -128,7 +128,7 @@ class Com():
             
         while True:
             time.sleep(1)
-            audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-2000, background=False)
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-2000, background=False)
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 그렸으면 다 그렸다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -160,7 +160,7 @@ class Com():
             
         while True:
             time.sleep(1)
-            audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-2000, background=False)             
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-2000, background=False)             
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"동물들을 모두 날려 넣었어? 다 했으면 다 했다고 말해줘.")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])

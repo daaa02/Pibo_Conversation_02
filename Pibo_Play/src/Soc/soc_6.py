@@ -12,7 +12,7 @@ import json
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 
-sys.path.append('/home/pi/Pibo_Play/')
+sys.path.append('/home/pi/Pibo_Package_02/Pibo_Play/')
 from data.p_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
@@ -84,19 +84,19 @@ class Soc():
                 time.sleep(1)
                 
                 pibo = cm.tts(bhv="do_joy_A", string=f"첫번째 악기는 손바닥이야. 손바닥을 마주쳐 짝짝 소리를 내보자! 음악을 틀어줄게.")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
                 
                 body = random.choice(self.body)
                 pibo = cm.tts(bhv="do_joy_A", string=f"이번엔 {body} 소리를 내보자! 음악을 틀어줄게.")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
                 
                 body = random.choice(self.body)
                 pibo = cm.tts(bhv="do_joy_A", string=f"이번엔 {body} 소리를 내보자! 음악을 틀어줄게.")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
                 
                 body = random.choice(self.body)
                 pibo = cm.tts(bhv="do_joy_A", string=f"이번엔 {body} 소리를 내보자! 음악을 틀어줄게.")
-                audio.audio_play(filename="/home/pi/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
+                audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_body.mp3", volume=-1500)
                 
                 pibo = cm.tts(bhv="do_compliment_L", string=f"우리 몸에서 나는 소리가 정말 악기 소리같아! 정말 신나는 신체 악기 연주였어!")
                 break
