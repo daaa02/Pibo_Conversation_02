@@ -72,7 +72,7 @@ while True:
             
             # pibo_audio.mute(False)
             
-            answer = cm.responses_proc(re_bhv="do_waiting_A", re_q="나한테 안녕이라고 말해줄래?", feedback="N")
+            answer = cm.responses_proc(re_bhv="do_waiting_A", re_q="나한테 안녕이라고 말해줄래?")
             print(answer)
             
             # 키워드 단순화
