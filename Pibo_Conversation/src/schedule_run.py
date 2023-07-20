@@ -8,7 +8,7 @@ from datetime import datetime
 
 sys.path.append('/home/pi')
 from schedule_update import UpdateSchedule
-from Pibo_Conversation.data.text_to_speech import TextToSpeech, text_to_speech
+from Pibo_Package_02.Pibo_Conversation.data.text_to_speech import TextToSpeech, text_to_speech
 
 from openpibo.audio import Audio
 from openpibo.motion import Motion
