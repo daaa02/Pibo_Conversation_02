@@ -108,6 +108,7 @@ class Soc():
             break
         
         while True:
+            time.sleep(10)  
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 만들었으면 다 만들었다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -124,6 +125,7 @@ class Soc():
                 continue
         
         while True:       
+            time.sleep(10)  
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 모았으면 다 모았다고 말해줘~ ")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -133,7 +135,7 @@ class Soc():
                 
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_paperrain.wav", volume=-1800)
                 pibo = cm.tts(bhv="do_stop", string=f"신문지 비가 또 내린다~")
-                time.sleep(1)
+                time.sleep(5)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"{wm.word(self.user_name, 0)}가 내린 신문지 비는 정말 포근했어. 젖지 않는 멋진 비야~")
                 break
             else:

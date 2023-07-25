@@ -119,10 +119,16 @@ class Com():
             if len(self.animal) != 0:
                 pibo = cm.tts(bhv="do_joy_B", string=f"좋았어! {wm.word(self.animal, 0)}로 변해라, 얍!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_magician.wav", volume=-1500, background=False)
+                time.sleep(5) 
+                
                 pibo = cm.tts(bhv="do_joy_A", string=f"정말 실감나는 걸? 또 주문을 걸게~ 그대로 멈춰라, 얍!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_magician.wav", volume=-1500, background=False)
+                time.sleep(5) 
+                
                 pibo = cm.tts(bhv="do_joy_B", string=f"이제 마법이 풀렸어! 이번에는 {wm.word(self.user_name, 0)}로 변해라, 얍!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_magician.wav", volume=-1500, background=False)
+                time.sleep(5) 
+                
                 pibo = cm.tts(bhv="do_question_S", string=f"{wm.word(self.user_name, 0)}는 지금 무엇을 하고 있어?")
                 cwc.writerow(['pibo', pibo])
                 break
@@ -131,10 +137,16 @@ class Com():
                 self.animal = "그 동물"
                 pibo = cm.tts(bhv="do_joy_B", string=f"좋았어! {wm.word(self.user_name, 0)}가 좋아하는 동물로 변해라, 얍!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_magician.wav", volume=-1500, background=False)
+                time.sleep(5) 
+                
                 pibo = cm.tts(bhv="do_joy_A", string=f"정말 실감나는 걸? 또 주문을 걸게~ 그대로 멈춰라, 얍!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_magician.wav", volume=-1500, background=False)
+                time.sleep(5) 
+                
                 pibo = cm.tts(bhv="do_joy_B", string=f"이제 마법이 풀렸어! 이번에는 {wm.word(self.user_name, 0)}로 변해라, 얍!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_magician.wav", volume=-1500, background=False)
+                time.sleep(5) 
+                
                 pibo = cm.tts(bhv="do_question_S", string=f"{wm.word(self.user_name, 0)}는 지금 무엇을 하고 있어?")
                 cwc.writerow(['pibo', pibo])
                 break

@@ -114,6 +114,7 @@ class Cog():
                 continue
             
         while True:
+            time.sleep(10)
             answer = cm.responses_proc(re_bhv="do_explain_A", re_q=f"다 넣었으면 다 넣었다고 말해줘!")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -136,6 +137,7 @@ class Cog():
             
             
         while True:
+            time.sleep(10)            
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"끝났으면 끝났다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -152,6 +154,7 @@ class Cog():
                 continue
         
         while True:
+            time.sleep(10)            
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 올렸으면 다 올렸다고 말해줘!")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -162,7 +165,7 @@ class Cog():
                 pibo = cm.tts(bhv="do_joy_A", string=f"자, 준비이~ 하나, 두울, 세엣!")
                 audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_cup.wav", volume=-1500)
                 
-                time.sleep(1)
+                time.sleep(5)
                 pibo = cm.tts(bhv="do_question_L", string=f"{wm.word(self.user_name, 0)}는 오늘 종이컵 놀이 하면서 어려운 게 있었어? ")
                 answer = cm.responses_proc(re_bhv="do_question_L", re_q=f"오늘 종이컵 놀이 하면서 어려운 게 있었어? ")
                 cwc.writerow(['pibo', pibo])

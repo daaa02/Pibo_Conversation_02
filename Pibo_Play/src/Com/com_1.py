@@ -110,7 +110,7 @@ class Com():
                 continue                         
         
         while True: 
-            time.sleep(0.5)
+            time.sleep(10) 
             answer = cm.responses_proc(re_bhv="do_waiting_B", re_q=f"동물을 종이에 다 그렸으면 다 그렸다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -127,7 +127,7 @@ class Com():
                 continue
             
         while True:
-            time.sleep(1)
+            time.sleep(10) 
             audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-2000, background=False)
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 그렸으면 다 그렸다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
@@ -142,7 +142,7 @@ class Com():
                 continue
         
         while True:
-            time.sleep(1)
+            time.sleep(10) 
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"그림 모양대로 다 오렸으면 다 오렸다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -159,7 +159,6 @@ class Com():
                 continue
             
         while True:
-            time.sleep(1)
             audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Play/data/behavior/audio/sound_standing.mp3", volume=-2000, background=False)             
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"동물들을 모두 날려 넣었어? 다 했으면 다 했다고 말해줘.")
             cwc.writerow(['user', answer[0][1], answer[1]])

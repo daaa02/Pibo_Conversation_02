@@ -104,7 +104,7 @@ class Cog():
                 continue
             
         while True:
-            time.sleep(1)  
+            time.sleep(10)  
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 만들었으면 다 만들었다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -137,7 +137,7 @@ class Cog():
             
             
         while True:
-            time.sleep(1)  
+            time.sleep(5)  
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"끝났으면 끝났다고 말해줘~")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])

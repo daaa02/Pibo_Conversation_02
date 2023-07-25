@@ -108,7 +108,7 @@ class Mus():
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"풍선을 묶지 말고 멀리 날려보자~")
                 time.sleep(7)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"이제 풍선을 쫓아가서 잡아 오자~")
-                time.sleep(5)
+                time.sleep(7)
                 pibo = cm.tts(bhv="do_suggestion_L", string=f"이번에는 풍선을 불어서 꼭지를 묶어봐~")
                 time.sleep(10)
                 break

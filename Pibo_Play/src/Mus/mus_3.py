@@ -110,6 +110,7 @@ class Mus():
                 continue                         
             
         while True:
+            time.sleep(10)  
             answer = cm.responses_proc(re_bhv="do_waiting_A", re_q=f"다 했으면 다 했어 라고 말해줘!")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -124,6 +125,7 @@ class Mus():
                 continue      
             
         while True:            
+            time.sleep(7)  
             answer = cm.responses_proc(re_bhv="do_waiting_B", re_q=f"다 했으면 다 했어 라고 말해줘.")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
@@ -139,6 +141,7 @@ class Mus():
                 continue
             
         while True:            
+            time.sleep(10)  
             answer = cm.responses_proc(re_bhv="do_question_S", re_q=f"{wm.word(self.user_name, 0)}는 어떤 모양을 만들고 싶어?")
             cwc.writerow(['user', answer[0][1], answer[1]])
             self.reject.append(answer[1])
