@@ -77,11 +77,11 @@ while True:
             
             # 키워드 단순화
             if "소개" in answer[0][1] or "반가" in answer[0][1]:
-                # os.system('python3 /home/pi/Pibo_Package_03/Pibo_Conversation/src/greeting.py')
+                # os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/greeting.py')
                 break
             
             if "헤어" in answer[0][1]:
-                # os.system('python3 /home/pi/Pibo_Package_03/Pibo_Conversation/src/goodbye.py') 
+                # os.system('python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/goodbye.py') 
                 break
             
             else:    
