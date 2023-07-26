@@ -9,6 +9,7 @@ from datetime import datetime
 sys.path.append('/home/pi')
 from schedule_update import UpdateSchedule
 from Pibo_Package_02.Pibo_Conversation.data.text_to_speech import TextToSpeech, text_to_speech
+from Pibo_Package_02.Pibo_Conversation.data.upload_test import drive_upload
 
 from openpibo.audio import Audio
 from openpibo.motion import Motion
@@ -127,7 +128,14 @@ class RunSchedule():
         try:
             # out = subprocess.run([f'python3 {self.path}/{self.act}'], shell=True)
             # subprocess.run([f'python3 {self.path}/{self.act}'], shell=True)
-            os.system(f'python3 {self.path}/{self.act}')
+            f = open(f'{folder}/{today}.txt','wb')        
+            
+            # os.system(f'python3 {self.path}/{self.act}')
+            out = subprocess.check_output([f'python3 {self.path}/{self.act}'], shell=True)
+            f.write(out)
+            f.close()
+            drive_upload(folder, f'{today}.txt')
+            
             
             if self.completion >= 10:
                 pass
@@ -151,9 +159,11 @@ class RunSchedule():
             #     subprocess.run(['python3 /home/pi/Pibo_Package_02/Pibo_Conversation/src/start_touch.py'], shell=True)
         
         except Exception as ex:
-            with open('/home/pi/pibo_errmsg', 'w') as f:
-                f.write(f'[{time.ctime()}]\n{ex}')
-                
+            with open('/home/pi/pibo_errmsg.txt', 'wb') as f:
+                error = f'[{time.ctime()}]\n{ex}'
+                f.write(error.decode('utf-8'))
+                f.close()
+                drive_upload('/home/pi', 'pibo_errmsg')
         
         
 
