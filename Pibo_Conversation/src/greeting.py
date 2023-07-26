@@ -35,7 +35,9 @@ folder = "/home/pi/UserData"
 filename = os.path.basename(__file__).strip('.py')
 today = datetime.now().strftime('%y%m%d_%H%M')
 csv_conversation = open(f'{folder}/{today}_{filename}.csv', 'a', newline='', encoding = 'utf-8')
+csv_preference = open(f'{folder}/aa.csv', 'a', newline='', encoding = 'utf-8')
 cwc = csv.writer(csv_conversation)
+cwp = csv.writer(csv_preference)
 crc = csv.reader(csv_conversation, delimiter=',', doublequote=True, lineterminator='\r\n', quotechar='"')
 
 class Say():
@@ -193,7 +195,8 @@ class Say():
         # 1.5 사용법 설명
         pibo = cm.tts(bhv="do_joy_A", string=f"{wm.word(self.user_name, 0)}랑 보내게 될 시간들이 정말 기대돼. 심심하거나 놀고 싶으면 언제든 파이보 머리를 쓰다듬어 줘!")
         
-        
+        self.score = [0.0, 0.0, 0.0, 0.0]
+        cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
         
         # 4. Paradise framework 기록
         turns = sum((self.reject[i] + 1) * 2 for i in range(len(self.reject)))  
