@@ -25,7 +25,7 @@ gss = google_spread_sheet()
 
 folder = "/home/pi/UserData"
 filename = os.path.basename(__file__).strip('.py')
-today = datetime.now().strftime('%y%m%d_%H%M')
+today = datetime.now().strftime('%m%d_%H%M')
 csv_conversation = open(f'{folder}/{today}_{filename}.csv', 'a', newline='', encoding = 'utf-8')
 csv_preference = open(f'{folder}/aa.csv', 'a', newline='', encoding = 'utf-8')
 cwc = csv.writer(csv_conversation)
@@ -140,8 +140,8 @@ class Fairytale():
         # 3. 피드백 수집
         time.sleep(1)                   
         pibo = cm.tts(bhv="do_question_S", string="파이보랑 얘기한 거 재미있었어? 재밌었는지, 별로였는지 얘기해줄래?")
-        answer = cm.responses_proc(re_bhv="do_question_S", re_q=f"파이보랑 얘기한 거 재미있었어?") 
-              
+        answer = cm.responses_proc(re_bhv="do_question_S", re_q=f"파이보랑 얘기한 거 재미있었어?")       
+        
         if answer[0][0] == "negative":
             cm.tts(bhv="do_joy_A", string=f"파이보는 {wm.word(self.user_name, 0)}랑 놀아서 재미있었어!")
             self.score = [0.0, -0.5, 0.0, 0.0]
@@ -153,6 +153,7 @@ class Fairytale():
         if answer[0][0] != "negative" and answer[0][0] != "positive": # if answer[0][0] == "neutral":
             cm.tts(bhv="do_joy_A", string=f"{wm.word(self.user_name, 0)}랑 노는 건 정말 재미있어.")
             self.score = [0.0, -0.25, 0.0, 0.0]
+        
         
         cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
 

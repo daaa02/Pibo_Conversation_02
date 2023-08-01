@@ -25,7 +25,7 @@ gss = google_spread_sheet()
 
 folder = "/home/pi/UserData"
 filename = os.path.basename(__file__).strip('.py')
-today = datetime.now().strftime('%y%m%d_%H%M')
+today = datetime.now().strftime('%m%d_%H%M')
 csv_conversation = open(f'{folder}/{today}_{filename}.csv', 'a', newline='', encoding = 'utf-8')
 csv_preference = open(f'{folder}/aa.csv', 'a', newline='', encoding = 'utf-8')
 cwc = csv.writer(csv_conversation)
@@ -53,31 +53,49 @@ class Solution():
         pibo = cm.tts(bhv="do_question_S", string=f"{wm.word(self.user_name, 0)}는 기분이 안 좋은 친구를 기쁘게 만들어 준 적이 있니?")
         answer = cm.responses_proc(re_bhv="do_question_L", re_q=f"{wm.word(self.user_name, 0)}는 기분이 안 좋은 친구를 기쁘게 만들어 준 적이 있니?",
                                    pos_bhv="do_question_S", pos="친구가 정말 좋아했겠다!")                
+        cwc.writerow(['pibo', pibo])
+        cwc.writerow(['user', answer[0][1], answer[1]])
+        self.reject.append(answer[1])
     
             
         pibo = cm.tts(bhv="do_question_L", string=f"나는 기분이 안 좋을 때 잠을 자. {wm.word(self.user_name, 0)}는 기분이 안 좋을 때 어떻게 하니?")
         answer = cm.responses_proc(re_bhv="do_question_S", re_q=f"나는 기분이 안 좋을 때 잠을 자. {wm.word(self.user_name, 0)}는 기분이 안 좋을 때 어떻게 하니?",
                                    neu_bhv="do_explain_A", neu="괜찮아. 생각이 나지 않을 수 있어.")
+        cwc.writerow(['pibo', pibo])
+        cwc.writerow(['user', answer[0][1], answer[1]])
+        self.reject.append(answer[1])
             
         pibo = cm.tts(bhv="do_question_L", string=f"나는 칭찬을 들었을 때 기분이 좋아져. {wm.word(self.user_name, 0)}는 어떤 칭찬을 들으면 기분이 좋아지니?")
         answer = cm.responses_proc(re_bhv="do_question_S", re_q=f"나는 칭찬을 들었을 때 기분이 좋아져. {wm.word(self.user_name, 0)}는 어떤 칭찬을 들으면 기분이 좋아지니?",
                                    pos_bhv="do_compliment_S", pos="듣기만 해도 좋은 걸?",
                                    neu_bhv="do_compliment_S", neu="괜찮아. 바로 떠오르지 않을 수 있어.",
                                    act_bhv="do_compliment_S", act="듣기만 해도 좋은 걸?")
+        cwc.writerow(['pibo', pibo])
+        cwc.writerow(['user', answer[0][1], answer[1]])
+        self.reject.append(answer[1])
             
         pibo = cm.tts(bhv="do_question_S", string="친구들이랑 재미있는 놀이를 하면 기분이 좋아질까?")
         answer = cm.responses_proc(re_bhv="do_question_S", re_q="친구들이랑 재미있는 놀이를 하면 기분이 좋아질까?",
                                    pos_bhv="do_compliment_S", pos="같이 놀이를 하면 신나겠다.")
+        cwc.writerow(['pibo', pibo])
+        cwc.writerow(['user', answer[0][1], answer[1]])
+        self.reject.append(answer[1])
         
         pibo = cm.tts(bhv="do_question_L", string="나는 맛있는 음식을 먹어도 기분이 좋아져. 무엇을 먹으면 기분이 좋아질까?")
         answer = cm.responses_proc(re_bhv="do_question_S", re_q="나는 맛있는 음식을 먹어도 기분이 좋아져. 무엇을 먹으면 기분이 좋아질까?",
                                    pos_bhv="do_explain_B", pos="기분이 좋아지겠다.")
+        cwc.writerow(['pibo', pibo])
+        cwc.writerow(['user', answer[0][1], answer[1]])
+        self.reject.append(answer[1])
         
         pibo = cm.tts(bhv="do_question_L", string="기분이 안 좋은 친구를 어떻게 도와주는게 좋을까?")
         answer = cm.responses_proc(re_bhv="do_question_S", re_q="기분이 안 좋은 친구를 어떻게 도와주는게 좋을까?",
                                    pos_bhv="do_compliment_S", pos="친구에게 도움이 되겠는 걸?",
                                    neu_bhv="do_suggestion_S", neu="괜찮아. 모를 수도 있어. 친구랑 재미있는 놀이를 같이해도 좋겠지?",
                                    act_bhv="do_compliment_S", act="친구에게 도움이 되겠는 걸?")
+        cwc.writerow(['pibo', pibo])
+        cwc.writerow(['user', answer[0][1], answer[1]])
+        self.reject.append(answer[1])
         
         # 2.1 문제 해결
         pibo = cm.tts(bhv="do_joy_A", string="파이보도 기분이 안 좋은 친구를 잘 도와줘 볼게. 알려줘서 정말 고마워!")
@@ -120,7 +138,7 @@ class Solution():
         cwc.writerow(['%Misrecognitions', ])
 
         # 5. 활동 완료 기록
-        gss.write_sheet(name=self.user_name, today=today, activities=filename)
+        gss.write_sheet(name=self.user_name, today=f'(4)_{today}', activities=filename)
 
 
 

@@ -25,7 +25,7 @@ gss = google_spread_sheet()
 
 folder = "/home/pi/UserData"
 filename = os.path.basename(__file__).strip('.py')
-today = datetime.now().strftime('%y%m%d_%H%M')
+today = datetime.now().strftime('%m%d_%H%M')
 csv_conversation = open(f'{folder}/{today}_{filename}.csv', 'a', newline='', encoding = 'utf-8')
 csv_preference = open(f'{folder}/aa.csv', 'a', newline='', encoding = 'utf-8')
 cwc = csv.writer(csv_conversation)
@@ -68,11 +68,6 @@ class Say():
         pibo = cm.tts(bhv="do_compliment_S", string=f"이야기 해줘서 고마워!")
 
         pibo = cm.tts(bhv="do_joy_A", string=f"우리 모두 다음에 만나는 날까지 쑥쑥 자라도록 하자. 안녕!")
-        
-        
-        self.score = [0.0, 0.0, 0.0, 0.0]
-        cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
-
 
         
         # 4. Paradise framework 기록
@@ -89,7 +84,7 @@ class Say():
         cwc.writerow(['%Misrecognitions', ])
 
         # 5. 활동 완료 기록
-        gss.write_sheet(name=self.user_name, today=today, activities=filename)
+        gss.write_sheet(name=self.user_name, today=f'(4)_{today}', activities=filename)
 
 if __name__ == "__main__":
     

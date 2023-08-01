@@ -217,9 +217,8 @@ class Cog():
         cwc.writerow(['%Rejections', ])
         cwc.writerow(['%Misrecognitions', ])
 
-        # 5. 활동 완료 기록
-        today_end = datetime.now().strftime('%m%d_%H%M')        
-        gss.write_sheet(name=self.user_name, today=f'end_{today_end}', activities=filename)
+        # 5. 활동 완료 기록   
+        gss.write_sheet(name=self.user_name, today=f'(4)_{today}', activities=filename)
         
         
         

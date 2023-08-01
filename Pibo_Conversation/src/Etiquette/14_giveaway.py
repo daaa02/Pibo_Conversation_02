@@ -31,7 +31,7 @@ gss = google_spread_sheet()
 
 folder = "/home/pi/UserData"
 filename = os.path.basename(__file__).strip('.py')
-today = datetime.now().strftime('%y%m%d_%H%M')
+today = datetime.now().strftime('%m%d_%H%M')
 csv_conversation = open(f'{folder}/{today}_{filename}.csv', 'a', newline='', encoding = 'utf-8')
 csv_preference = open(f'{folder}/aa.csv', 'a', newline='', encoding = 'utf-8')
 cwc = csv.writer(csv_conversation)
@@ -50,6 +50,9 @@ class Etiquette():
         self.score = []
         self.turns = []
         self.reject = []
+        self.today = datetime.now().strftime('%m%d_%H%M')
+        
+        
                 
         
     def Giveaway(self):
@@ -169,7 +172,7 @@ class Etiquette():
             cm.tts(bhv="do_joy_A", string=f"{wm.word(self.user_name, 0)}랑 노는 건 정말 재미있어.")
             self.score = [0.0, -0.25, 0.0, 0.0]
         
-        cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
+        cwp.writerow([self.today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
 
         # 종료 인사
         pibo = cm.tts(bhv="do_joy_A", string=f"나랑 놀아줘서 고마워~")
@@ -187,7 +190,7 @@ class Etiquette():
         cwc.writerow(['%Misrecognitions', ])
 
         # 5. 활동 완료 기록
-        gss.write_sheet(name=self.user_name, today=today, activities=filename)
+        gss.write_sheet(name=self.user_name, today=f'(4)_{self.today}', activities=filename)
 
 
 
