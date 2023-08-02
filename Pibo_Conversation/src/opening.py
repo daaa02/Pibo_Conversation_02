@@ -12,7 +12,6 @@ device = Device()
 oled = Oled()
 
 oled.set_font(size=15)
-
 oled.clear()
 oled.draw_text((5,25), "업데이트 중입니다."); oled.show()
 time.sleep(2)
@@ -25,6 +24,7 @@ while True:
 oled.clear()
 oled.draw_text((15,25), "업데이트 완료!"); oled.show()
 time.sleep(2)
+
 
 motion.set_motion("m_wakeup", 1)
 
