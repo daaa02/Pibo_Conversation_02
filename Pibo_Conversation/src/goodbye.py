@@ -69,6 +69,8 @@ class Say():
 
         pibo = cm.tts(bhv="do_joy_A", string=f"우리 모두 다음에 만나는 날까지 쑥쑥 자라도록 하자. 안녕!")
 
+        self.score = [0.0, 0.0, 0.0, 0.0]        
+        cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])  
         
         # 4. Paradise framework 기록
         turns = sum((self.reject[i] + 1) * 2 for i in range(len(self.reject)))
