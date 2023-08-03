@@ -214,7 +214,7 @@ class Cog():
 
         try:
             # 5. 활동 완료 기록    
-            gss.write_sheet(name=self.user_name, today=f'(4)_{today}', activities=filename)
+            gss.write_sheet(name=self.user_name, today=f'(3)_{today}', activities=filename)
         except Exception as e:
             pass
         

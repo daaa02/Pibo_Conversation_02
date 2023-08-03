@@ -182,8 +182,7 @@ class Soc():
 
         try:
             # 5. 활동 완료 기록
-            today_end = datetime.now().strftime('%m%d_%H%M')        
-            gss.write_sheet(name=self.user_name, today=f'end_{today_end}', activities=filename)
+            gss.write_sheet(name=self.user_name, today=f'(2)_{today}', activities=filename)
         except Exception as e:
             pass
             
