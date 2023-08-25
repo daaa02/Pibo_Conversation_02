@@ -64,6 +64,8 @@ class Com():
         
         while True:
             answer = cm.responses_proc(re_q="do_suggestion_S", re_bhv="한번 따라해봐! 우리는 춤을 추는 유령이에요~")
+            cwc.writerow(['user', answer[0][1], answer[1]])
+            self.reject.append(answer[1])
             
             pibo = cm.tts(bhv="do_explain_B", string=f"좋았어! 만약에 음악이 멈추면 제자리에서 정지해야 돼. 그리고 다시 음악이 나올 때 다시 춤을 추면 돼.")
             cwc.writerow(['pibo', pibo])
