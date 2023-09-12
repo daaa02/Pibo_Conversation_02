@@ -38,7 +38,7 @@ class RolePlay():
     def __init__(self): 
         with open('/home/pi/name_config.json', 'r') as f:
             config = json.load(f)        
-            self.user_name = config['user_name'] 
+            self.user_name = "예진" 
         self.rolemodel = ''
         self.score = []
         self.turns = []

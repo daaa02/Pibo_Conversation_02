@@ -39,7 +39,7 @@ class Fairytale():
         self.story_name = '모기와 사자'
         with open('/home/pi/name_config.json', 'r') as f:
             config = json.load(f)        
-            self.user_name = config['user_name'] 
+            self.user_name = "예진" 
         
     
     def Mosqutio(self):      
