@@ -134,7 +134,7 @@ class Fairytale():
             
         # 3. 마무리 대화    
         pibo = cm.tts(bhv="do_question_L", string=f"만약 {wm.word(self.user_name, 0)}가 동화 속 거북이를 만난다면 어떤 칭찬을 해주고 싶니?")
-        answer = cm.responses_proc(re_bhv="do_question_L", string=f"동화 속 거북이를 만난다면 어떤 칭찬을 해주고 싶니?",  
+        answer = cm.responses_proc(re_bhv="do_question_L", re_q=f"동화 속 거북이를 만난다면 어떤 칭찬을 해주고 싶니?",  
                                    pos_bhv="do_compliment_S", pos=f"그렇구나!",
                                    neu_bhv="do_compliment_S", neu=f"괜찮아. 생각이 안날 수 있지. ",
                                    neg_bhv="do_compliment_S", neg=f"그렇구나!",
