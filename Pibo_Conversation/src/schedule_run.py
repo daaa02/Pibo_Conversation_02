@@ -53,19 +53,19 @@ class RunSchedule():
         ## 고정된 스케줄로 진행(~3일차)
                 
         # 최초 실행시 자기소개 시나리오 실행
-        if self.completion == 12: 
+        if self.completion == 0:
             self.act = f'Pibo_Conversation/src/greeting.py'
         
-        if 13 <= self.completion <= 20:
-            fix = {13:'Pibo_Conversation/src/Fairytale/19_shepherd.py', 14:'Pibo_Conversation/src/Roleplay/02_strong.py',
-                   15:'Pibo_Conversation/src/Solution/01_badword.py', 16:'Pibo_Play/src/Com/com_4.py', 17:'Pibo_Play/src/Soc/soc_6.py',
-                   18:'Pibo_Conversation/src/Etiquette/03_cough.py', 19:'Pibo_Play/src/Cog/cog_1.py', 20:'Pibo_Play/src/Mus/mus_11.py'}   
+        if 1 <= self.completion <= 8:
+            fix = {1:'Pibo_Conversation/src/Fairytale/19_shepherd.py', 2:'Pibo_Conversation/src/Roleplay/02_strong.py',
+                   3:'Pibo_Conversation/src/Solution/01_badword.py', 4:'Pibo_Play/src/Com/com_4.py', 5:'Pibo_Play/src/Soc/soc_6.py',
+                   6:'Pibo_Conversation/src/Etiquette/03_cough.py', 7:'Pibo_Play/src/Cog/cog_1.py', 8:'Pibo_Play/src/Mus/mus_11.py'}   
             self.act = fix.get(self.completion)
             
         
         ## 선호도 계산해서 활동 스케줄 결정(4일차~)
         
-        if 21 <= self.completion <= 22 or self.completion >= 24:
+        if 9 <= self.completion <= 10 or self.completion >= 12:
             for i in range(0, len(data2)):
                 for j in range(0, 4):
                     data2[i][j] = float(data2[i][j])    # 점수 값이 string 형태로 들어있어서 flaot로 변환
@@ -81,12 +81,12 @@ class RunSchedule():
             if result == '사회성':            
                 # 완료한 활동 개수가 짝수면 놀이, 홀수면 대화
                 if self.completion % 2 == 0: 
-                    # rand = random.choice([2, 3])
-                    self.act = f'Pibo_Play/src/Soc/soc_2.py'
+                    rand = random.choice([2, 3])
+                    self.act = f'Pibo_Play/src/Soc/soc_{rand}.py'
                 
                 if self.completion % 2 != 0:
-                    # rand = random.choice(['06_street', '14_giveaway'])
-                    self.act = f'Pibo_Conversation/src/Etiquette/14_giveaway.py'
+                    rand = random.choice(['06_street', '14_giveaway'])
+                    self.act = f'Pibo_Conversation/src/Etiquette/{rand}.py'
                     # self.act = f'Pibo_Conversation/src/Etiquette/00_qrcode.py'
                 
             if result == '의사소통':
@@ -120,8 +120,8 @@ class RunSchedule():
                     self.act = f'Pibo_Conversation/src/Roleplay/{rand}.py'
         
         # 마지막 활동은 헤어짐 시나리오 실행 
-        if self.completion == 23:
-            self.act = f'Pibo_Conversation/src/goodbye.py'           
+        if self.completion == 11:
+            self.act = f'Pibo_Conversation/src/goodbye.py'            
         
         try:
             folder = "/home/pi/UserData"

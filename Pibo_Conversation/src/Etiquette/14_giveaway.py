@@ -44,7 +44,7 @@ class Etiquette():
     def __init__(self): 
         with open('/home/pi/name_config.json', 'r') as f:
             config = json.load(f)        
-            self.user_name = "예진" 
+            self.user_name = config['user_name'] 
         self.correct = ['친구', '장난감', '양보']
         self.ox = ''
         self.score = []

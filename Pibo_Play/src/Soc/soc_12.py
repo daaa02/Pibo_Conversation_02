@@ -40,7 +40,7 @@ class Soc():
     def __init__(self): 
         with open('/home/pi/name_config.json', 'r') as f:
             config = json.load(f)        
-            self.user_name = "예진" 
+            self.user_name = config['user_name'] 
         self.place = ['화장실', '부엌', '현관', '큰방', '작은방']
         self.aa = ''
         self.score = []
