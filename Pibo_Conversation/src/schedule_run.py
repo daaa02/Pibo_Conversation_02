@@ -118,6 +118,9 @@ class RunSchedule():
                 if self.completion % 2 != 0:
                     rand = random.choice(['03_tiny', '04_flying'])
                     self.act = f'Pibo_Conversation/src/Roleplay/{rand}.py'
+                    
+        if self.completion == 10:
+            self.act = f'Pibo_Play/src/Com/com_2.py'   
         
         # 마지막 활동은 헤어짐 시나리오 실행 
         if self.completion == 11:
