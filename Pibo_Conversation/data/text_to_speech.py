@@ -22,8 +22,8 @@ class TextToSpeech():
     
     def tts_connection(self, voice, text, filename):
         # CLOVA auth-key
-        client_id = "3qz5jqx2r0"
-        client_secret = "zwB0Yb4UONPKaOKCjZkhsSl8REuKvJTYK2Esvr41"
+        client_id = "9rx70l2455"
+        client_secret = "zC7febcAzgI4oTQ25DODSqDKerk0lUwhwIAbVvsA"
         encText = urllib.parse.quote(text)
         # data = f"speaker={voice}&volume=0&speed=1&pitch=0&format=wav&text=" + encText
         data = f"speaker={voice}&volume=0&speed=1&pitch=0&format=wav&text=" + encText
