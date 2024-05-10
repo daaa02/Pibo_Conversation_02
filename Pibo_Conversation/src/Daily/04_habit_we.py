@@ -50,22 +50,19 @@ class Daily():
         
         if type == 1:                
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
             if rand == 1:
-                # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
-                pibo = cm.tts(bhv="do_wakeup", string="3밤만 자면 크리스마스야!")
+                pibo = cm.tts(bhv="do_wakeup", string="아침이 되었어! 일어나~!")
             elif rand == 2:
-                # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_wakeup", string="해가 환하게 떴어! 일어나.")                
-            elif rand == 3:
-                # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
+            elif rand == 3:                
                 pibo = cm.tts(bhv="do_wakeup", string="벌써 아침이야! 일어나!")
         
         if type == 2:
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
             if rand == 1:
-                # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
+                audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
                 pibo = cm.tts(bhv="do_suggestion_L", string="좋은 아침이야! 부모님께 가서 인사하자.")
             elif rand == 2:
                 pibo = cm.tts(bhv="do_suggestion_L", string="잘잤니? 부모님께 인사하는 거 잊지 않았지?")                
@@ -74,9 +71,8 @@ class Daily():
                     
         if type == 3:
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
             if rand == 1:
-                # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="식사 시간이야! 꼭꼭 씹어서 맛있게 먹자.")
             elif rand == 2:
                 pibo = cm.tts(bhv="do_suggestion_L", string="밥 먹자. 딴 짓 하지 말고 맛있게 밥 먹자! ")                
@@ -99,7 +95,7 @@ class Daily():
         
         if type == 1:            
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="점심시간이야! 부모님께 감사 인사 드리고 맛있게 밥 먹자.")
@@ -124,7 +120,7 @@ class Daily():
         
         if type == 1:            
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="저녁시간이야! 부모님께 감사 인사 드리고 맛있게 밥 먹자.")
@@ -147,7 +143,7 @@ class Daily():
                 
         if type == 3:
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_stamp2.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="어질러진 방을 깨끗하게 정리하자!")
@@ -169,7 +165,7 @@ class Daily():
             
         if type == 5:            
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_stamp2.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="오늘의 특별한 일을 기록해 볼까?")
@@ -180,7 +176,7 @@ class Daily():
             
         if type == 6:         
             rand = random.randrange(1,4)  
-            
+            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_greeting.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_question_S", string="벌써 어두운 밤이네! 부모님께 인사 드리고 자자.")
@@ -208,6 +204,23 @@ class Daily():
 
 
     def Habit_weekend(self):
+        
+        day.morning(1); time.sleep(5)
+        day.morning(2); time.sleep(5)
+        day.morning(3); time.sleep(5)
+        day.morning(4); time.sleep(5)
+        
+        day.afternoon(1); time.sleep(5)
+        day.afternoon(2); time.sleep(5)
+        
+        day.evening(1); time.sleep(5)
+        day.evening(2); time.sleep(5)
+        day.evening(3); time.sleep(5)
+        day.evening(4); time.sleep(5)
+        day.evening(5); time.sleep(5)
+        day.evening(6); time.sleep(5)
+        
+        
         timeslot = input("\n시간대(mor/aft/eve): ")     # mor
         while True:
             if timeslot in ['mor', 'aft', 'eve']:
