@@ -8,7 +8,7 @@ scope = {
     'https://www.googleapis.com/auth/drive',
 }
 
-json_file='/home/pi/dayoung-123-1e6969392f38.json'
+json_file='/home/pi/stt-test-000-0226dec785df.json'
 credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file, scope)
 gc = gspread.authorize(credentials)
 url = "https://docs.google.com/spreadsheets/d/1mtetNRxVyOGZB9y1FL1OM1x3Ob7APSPXWiPkjqx_eTs/edit#gid=353058849"
