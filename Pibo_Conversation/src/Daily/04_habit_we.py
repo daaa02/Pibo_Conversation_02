@@ -61,8 +61,7 @@ class Daily():
         if type == 2:
             rand = random.randrange(1,4)  
             audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
-            if rand == 1:
-                audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
+            if rand == 1:                
                 pibo = cm.tts(bhv="do_suggestion_L", string="좋은 아침이야! 부모님께 가서 인사하자.")
             elif rand == 2:
                 pibo = cm.tts(bhv="do_suggestion_L", string="잘잤니? 부모님께 인사하는 거 잊지 않았지?")                
