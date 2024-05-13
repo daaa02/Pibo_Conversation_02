@@ -12,7 +12,7 @@ import json
 import time
 import json
 from datetime import datetime, timedelta
-import schedule_run
+# import schedule_run
 
 # sys.path.append('/home/kiro/workspace/Conversation_Scenarios/')
 sys.path.append('/home/pi/Pibo_Package_02/Pibo_Conversation/')
@@ -34,7 +34,7 @@ csv_conversation = open(f'{folder}/{today}_{filename}.csv', 'a', newline='', enc
 csv_preference = open(f'{folder}/aa.csv', 'a', newline='', encoding = 'utf-8')
 cwc = csv.writer(csv_conversation)
 cwp = csv.writer(csv_preference)
-crc = csv.reader(csv_conversation, delimiter=',', doublequote=True, lineterminator='\r\n', quotechar='"')
+crc = csv.reader(csv_conversation, delimiter=',', doublequote=True, lineterminator='/r/n', quotechar='"')
 
 
 class Daily():
@@ -50,7 +50,7 @@ class Daily():
         
         if type == 1:                
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
             if rand == 1:
                 pibo = cm.tts(bhv="do_wakeup", string="아침이 되었어! 일어나~!")
             elif rand == 2:
@@ -60,7 +60,7 @@ class Daily():
         
         if type == 2:
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_wakeup.wav")
             if rand == 1:                
                 pibo = cm.tts(bhv="do_suggestion_L", string="좋은 아침이야! 부모님께 가서 인사하자.")
             elif rand == 2:
@@ -70,7 +70,7 @@ class Daily():
                     
         if type == 3:
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
             if rand == 1:
                 pibo = cm.tts(bhv="do_suggestion_L", string="식사 시간이야! 꼭꼭 씹어서 맛있게 먹자.")
             elif rand == 2:
@@ -94,7 +94,7 @@ class Daily():
         
         if type == 1:            
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="점심시간이야! 부모님께 감사 인사 드리고 맛있게 밥 먹자.")
@@ -119,7 +119,7 @@ class Daily():
         
         if type == 1:            
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_cheerful1.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="저녁시간이야! 부모님께 감사 인사 드리고 맛있게 밥 먹자.")
@@ -142,7 +142,7 @@ class Daily():
                 
         if type == 3:
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_stamp2.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_stamp2.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="어질러진 방을 깨끗하게 정리하자!")
@@ -164,7 +164,7 @@ class Daily():
             
         if type == 5:            
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_stamp2.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_stamp2.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_suggestion_L", string="오늘의 특별한 일을 기록해 볼까?")
@@ -175,7 +175,7 @@ class Daily():
             
         if type == 6:         
             rand = random.randrange(1,4)  
-            audio.audio_play(filename="/home/pi/Pibo_Package_02\Pibo_Conversation/data/behavior/audio/sound_greeting.wav")
+            audio.audio_play(filename="/home/pi/Pibo_Package_02/Pibo_Conversation/data/behavior/audio/sound_greeting.wav")
             if rand == 1:
                 # audio.audio_play(filename="/home/pi/AI_pibo2/src/data/audio/**")
                 pibo = cm.tts(bhv="do_question_S", string="벌써 어두운 밤이네! 부모님께 인사 드리고 자자.")
@@ -203,7 +203,7 @@ class Daily():
 
 
     def Habit_weekend(self):
-        
+        time.sleep(5)
         day.morning(1); time.sleep(5)
         day.morning(2); time.sleep(5)
         day.morning(3); time.sleep(5)
@@ -220,31 +220,31 @@ class Daily():
         day.evening(6); time.sleep(5)
         
         
-        timeslot = input("\n시간대(mor/aft/eve): ")     # mor
-        while True:
-            if timeslot in ['mor', 'aft', 'eve']:
-                break
-            else:
-                timeslot = input("시간대(mor/aft/eve): ")
-                continue
-        self.start_morning = input("시작 시간(HH:MM): ")    # 지금 실제 시간 +1분  ex. 20:25
-        self.delay = int(input("알림 간격(MM): "))          # mm분 간격 알람이니까 1분으로 설정 ex. 01
+        # timeslot = input("/n시간대(mor/aft/eve): ")     # mor
+        # while True:
+        #     if timeslot in ['mor', 'aft', 'eve']:
+        #         break
+        #     else:
+        #         timeslot = input("시간대(mor/aft/eve): ")
+        #         continue
+        # self.start_morning = input("시작 시간(HH:MM): ")    # 지금 실제 시간 +1분  ex. 20:25
+        # self.delay = int(input("알림 간격(MM): "))          # mm분 간격 알람이니까 1분으로 설정 ex. 01
         
-        mor = []
-        # aft, eve = []
-        # timeslot = []
-        self.alarm = day.alarmtime(timeslot=timeslot)        
-        print("schedule: ", timeslot)
+        # mor = []
+        # # aft, eve = []
+        # # timeslot = []
+        # self.alarm = day.alarmtime(timeslot=timeslot)        
+        # print("schedule: ", timeslot)
         
-        schedule_run.every().day.at(self.alarm[0]).do(day.morning, 1)
-        schedule_run.every().day.at(self.alarm[0]).do(day.morning, 2)
-        schedule_run.every().day.at(self.alarm[0]).do(day.morning, 3)
-        schedule_run.every().day.at(self.alarm[0]).do(day.morning, 4)
+        # schedule_run.every().day.at(self.alarm[0]).do(day.morning, 1)
+        # schedule_run.every().day.at(self.alarm[0]).do(day.morning, 2)
+        # schedule_run.every().day.at(self.alarm[0]).do(day.morning, 3)
+        # schedule_run.every().day.at(self.alarm[0]).do(day.morning, 4)
         
         
-        while True:
-            schedule_run.run_pending()
-            time.sleep(1)
+        # while True:
+        #     schedule_run.run_pending()
+        #     time.sleep(1)
 
         
     
