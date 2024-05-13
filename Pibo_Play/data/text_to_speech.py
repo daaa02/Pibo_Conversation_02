@@ -70,7 +70,7 @@ def text_to_speech(voice='nhajun', text=''):
     filename = "/home/pi/tts.wav"
     print("\n" + text + "\n")
     tts.tts_connection(voice, text, filename)
-    tts.audio_play(filename, 'local', '-800', False)
+    tts.audio_play(filename, 'local', '-1000', False)
     time.sleep(0.5)
 
 

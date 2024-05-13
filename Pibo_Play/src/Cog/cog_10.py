@@ -224,5 +224,6 @@ class Cog():
         
 if __name__ == "__main__":
     
+    time.sleep(7)
     cog = Cog()
     cog.cog_10()
